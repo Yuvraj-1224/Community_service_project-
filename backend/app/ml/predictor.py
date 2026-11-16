@@ -14,16 +14,20 @@ from __future__ import annotations
 
 import json
 import logging
+import base64
 import threading
+from io import BytesIO
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Protocol
+from urllib.error import URLError
+from urllib.request import Request, urlopen
 
 import numpy as np
 from PIL import Image
 
 from app.core.config import settings
-from app.ml.labels import parse_label
+from app.ml.labels import SUPPORTED_CLASSES, parse_label
 
 logger = logging.getLogger("agrovision.ml")
 
@@ -134,6 +138,93 @@ class KerasPredictor:
         }
 
 
+class OllamaPredictor:
+    """Use a local Ollama vision model while preserving the classifier contract."""
+
+    def __init__(self):
+        self.labels = list(SUPPORTED_CLASSES)
+        self.version = f"ollama:{settings.OLLAMA_MODEL}"
+        self.input_size = 224
+        self._ready = False
+        self.load_error: str | None = None
+
+    @property
+    def endpoint(self) -> str:
+        return f"{settings.OLLAMA_URL.rstrip('/')}/api/chat"
+
+    def _request(self, payload: dict) -> dict:
+        request = Request(
+            self.endpoint,
+            data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urlopen(request, timeout=settings.OLLAMA_TIMEOUT_SECONDS) as response:
+            return json.loads(response.read().decode("utf-8"))
+
+    def is_ready(self) -> bool:
+        try:
+            request = Request(f"{settings.OLLAMA_URL.rstrip('/')}/api/tags", method="GET")
+            with urlopen(request, timeout=5) as response:
+                models = json.loads(response.read().decode("utf-8")).get("models", [])
+            self._ready = any(model.get("name") == settings.OLLAMA_MODEL for model in models)
+            self.load_error = None if self._ready else f"Ollama model not installed: {settings.OLLAMA_MODEL}"
+        except (OSError, URLError, ValueError) as exc:
+            self._ready = False
+            self.load_error = f"Ollama is unavailable at {settings.OLLAMA_URL}: {exc}"
+        return self._ready
+
+    def predict_proba(self, img: Image.Image) -> np.ndarray:
+        if not self.is_ready():
+            raise ModelUnavailableError(self.load_error or "Ollama is unavailable")
+        image_buffer = BytesIO()
+        img.convert("RGB").save(image_buffer, format="JPEG", quality=90)
+        labels = "\n".join(f"- {label}" for label in self.labels)
+        prompt = (
+            "Classify this plant leaf image. Choose exactly one class_label from the allowed list. "
+            "Return JSON only with keys class_label and confidence, where confidence is a number from 0 to 1. "
+            "If uncertain, still choose the closest allowed label and lower the confidence.\n\n"
+            f"Allowed class_label values:\n{labels}"
+        )
+        try:
+            result = self._request({
+                "model": settings.OLLAMA_MODEL,
+                "stream": False,
+                "format": "json",
+                "messages": [{
+                    "role": "user",
+                    "content": prompt,
+                    "images": [base64.b64encode(image_buffer.getvalue()).decode("ascii")],
+                }],
+            })
+            content = result["message"]["content"]
+            output = json.loads(content) if isinstance(content, str) else content
+            label = output["class_label"]
+            confidence = max(0.0, min(1.0, float(output["confidence"])))
+            if label not in self.labels:
+                raise ValueError(f"Ollama returned unsupported class_label: {label}")
+        except (KeyError, TypeError, ValueError, OSError, URLError, json.JSONDecodeError) as exc:
+            raise ModelUnavailableError(f"Invalid Ollama prediction: {exc}") from exc
+        probabilities = np.full(len(self.labels), (1.0 - confidence) / (len(self.labels) - 1))
+        probabilities[self.labels.index(label)] = confidence
+        return probabilities
+
+    def info(self) -> dict:
+        ready = self.is_ready()
+        return {
+            "ready": ready,
+            "version": self.version if ready else None,
+            "architecture": "Ollama vision model",
+            "num_classes": len(self.labels),
+            "input_size": self.input_size,
+            "preprocessing": "Ollama image input",
+            "trained_on": None,
+            "metrics": None,
+            "confidence_threshold": settings.CONFIDENCE_THRESHOLD,
+            "error": None if ready else self.load_error,
+        }
+
+
 # --------------------------------------------------------------------------------------
 # Decision logic: confidence threshold + distinguishing low confidence from unsupported
 # --------------------------------------------------------------------------------------
@@ -193,5 +284,5 @@ _predictor: Predictor | None = None
 def get_predictor() -> Predictor:
     global _predictor
     if _predictor is None:
-        _predictor = KerasPredictor(settings.MODEL_DIR)
+        _predictor = OllamaPredictor() if settings.AI_PROVIDER.lower() == "ollama" else KerasPredictor(settings.MODEL_DIR)
     return _predictor

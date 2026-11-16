@@ -38,6 +38,10 @@ class Settings(BaseSettings):
     MODEL_FILE: str = "agrovision_mobilenetv2.keras"
     LABELS_FILE: str = "labels.json"
     MODEL_META_FILE: str = "model_meta.json"
+    AI_PROVIDER: str = "ollama"
+    OLLAMA_URL: str = "http://127.0.0.1:11434"
+    OLLAMA_MODEL: str = "qwen2.5vl:7b"
+    OLLAMA_TIMEOUT_SECONDS: float = 300.0
     CONFIDENCE_THRESHOLD: float = 0.70
     CROP_CONSISTENCY_THRESHOLD: float = 0.80
     MIN_PLANT_PIXEL_RATIO: float = 0.08
