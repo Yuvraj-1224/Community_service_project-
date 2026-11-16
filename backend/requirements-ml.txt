@@ -1,0 +1,3 @@
+# Needed to RUN inference with the trained model (install after requirements.txt).
+# Python 3.11/3.12 recommended for TensorFlow.
+tensorflow>=2.16,<2.22

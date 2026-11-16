@@ -1,0 +1,139 @@
+{
+  "app": { "name": "AgroVision AI", "tagline": "Smart Plant Disease Detection" },
+  "nav": {
+    "home": "Home", "features": "Features", "howItWorks": "How It Works", "about": "About", "login": "Login",
+    "register": "Register", "dashboard": "Dashboard", "detect": "Detect Disease", "history": "Scan History",
+    "diseases": "Disease Library", "profile": "Profile", "admin": "Admin Panel", "adminUsers": "Users",
+    "adminDiseases": "Manage Diseases", "logout": "Logout", "menu": "Menu", "language": "Language"
+  },
+  "landing": {
+    "headline": "Smart Farming Starts with Healthy Plants",
+    "subtitle": "Detect plant diseases instantly using AI-powered technology.",
+    "uploadImage": "Upload Image", "exploreFeatures": "Explore Features",
+    "badge": "AI for Indian farmers · Hindi & English",
+    "featuresTitle": "Everything a farmer needs", "featuresSubtitle": "From a single leaf photo to a clear action plan.",
+    "f1t": "Instant Detection", "f1d": "Upload or click a leaf photo and get the disease name with a confidence score.",
+    "f2t": "Camera Capture", "f2d": "Use your phone camera directly in the field – no app install needed.",
+    "f3t": "Treatment & Prevention", "f3d": "Symptoms, causes, prevention and safe treatment guidance for every disease.",
+    "f4t": "Hindi & English", "f4d": "Simple, farmer-friendly language. Switch any time.",
+    "f5t": "Scan History", "f5d": "Every scan is saved so you can track your crop health over time.",
+    "f6t": "PDF Reports", "f6d": "Download a diagnosis report to share with your agriculture officer.",
+    "howTitle": "How it works",
+    "s1t": "Take a photo", "s1d": "Click a clear photo of one affected leaf in daylight.",
+    "s2t": "AI analyses it", "s2d": "Our trained model checks the leaf for 27 crop conditions.",
+    "s3t": "Get the result", "s3d": "See the disease, confidence and what to do next.",
+    "s4t": "Act & track", "s4d": "Follow prevention tips, consult an expert, download the report.",
+    "cropsTitle": "Supported crops", "cropsSubtitle": "Trained on the PlantVillage dataset for these six crops.",
+    "aboutTitle": "About the project",
+    "aboutText": "AgroVision AI is a B.Tech final-year project that uses deep learning (MobileNetV2 transfer learning) to help farmers identify plant diseases early. It gives guidance only – always consult your local agriculture expert or Krishi Vigyan Kendra before using any chemical.",
+    "cta": "Start your first scan", "footerRights": "All rights reserved.", "contact": "Contact", "project": "Project",
+    "footerProject": "B.Tech Final Year Project · AI/ML + Full-Stack", "techStack": "React · FastAPI · TensorFlow"
+  },
+  "crops": { "Tomato": "Tomato", "Potato": "Potato", "Bell Pepper": "Bell Pepper", "Apple": "Apple", "Corn": "Corn", "Grape": "Grape" },
+  "auth": {
+    "loginTitle": "Welcome back", "loginSubtitle": "Log in to scan your crops",
+    "registerTitle": "Create your account", "registerSubtitle": "Join AgroVision AI – it's free",
+    "fullName": "Full Name", "email": "Email", "mobile": "Mobile Number", "password": "Password",
+    "confirmPassword": "Confirm Password", "role": "User Role", "farmer": "Farmer", "admin": "Admin",
+    "adminNote": "Admin accounts are created by the system administrator only.",
+    "preferredLanguage": "Preferred Language", "loginBtn": "Login", "registerBtn": "Create Account",
+    "noAccount": "Don't have an account?", "haveAccount": "Already have an account?", "forgot": "Forgot password?",
+    "forgotTitle": "Reset your password", "forgotSubtitle": "Enter your registered email address.",
+    "forgotBtn": "Send reset request",
+    "forgotDone": "Online password reset is not enabled in this version. Please contact the AgroVision AI administrator with your registered email ({{email}}) to reset your password.",
+    "backToLogin": "Back to login", "showPassword": "Show password", "hidePassword": "Hide password",
+    "passwordHint": "At least 8 characters with a letter and a number"
+  },
+  "validation": {
+    "required": "This field is required", "email": "Enter a valid email address",
+    "mobile": "Enter a valid 10–13 digit mobile number", "passwordWeak": "At least 8 characters, with a letter and a number",
+    "passwordMatch": "Passwords do not match", "nameShort": "Name is too short",
+    "fileType": "Only JPG, JPEG, PNG and WEBP images are allowed", "fileSize": "Image must be smaller than 10 MB"
+  },
+  "dashboard": {
+    "welcome": "Namaste, {{name}}!", "subtitle": "Here is the health summary of your crops.",
+    "totalScans": "Total Scans", "healthy": "Healthy Plants", "diseased": "Diseased Plants", "uncertain": "Unclear Results",
+    "quickScan": "Quick Scan", "recentScans": "Recent Scans", "recentActivity": "Recent Activity",
+    "statistics": "Disease Detection Statistics", "scansLast14": "Scans in the last 14 days", "topDiseases": "Most detected diseases",
+    "noScans": "No scans yet", "noScansHint": "Upload your first leaf photo to get started.", "viewAll": "View all",
+    "scannedOn": "Scanned {{crop}} – {{result}}", "byCrop": "Scans by crop"
+  },
+  "detect": {
+    "title": "Plant Disease Detection", "subtitle": "Upload or capture a clear photo of a single leaf.",
+    "dropHere": "Drag & drop a leaf image here", "or": "or", "browse": "Choose from device", "camera": "Use Camera",
+    "formats": "JPG, JPEG, PNG or WEBP · max 10 MB", "remove": "Remove", "replace": "Replace", "analyze": "Analyze Leaf",
+    "analyzing": "Analyzing your leaf…", "analyzingHint": "Our AI model is checking for diseases",
+    "tipsTitle": "Tips for a good photo",
+    "tip1": "Photograph one leaf, filling most of the frame", "tip2": "Use natural daylight, avoid shadows",
+    "tip3": "Keep the camera steady and in focus", "tip4": "Show the affected area clearly",
+    "newScan": "Scan another leaf", "compressed": "Large photo compressed for faster upload ({{from}} → {{to}})",
+    "modelNotReady": "The AI model is not installed on the server yet. Ask the administrator to train and export the model (see README).",
+    "modelVersion": "Model"
+  },
+  "result": {
+    "title": "Diagnosis Result", "crop": "Detected Crop", "disease": "Disease", "confidence": "Confidence",
+    "health": "Plant Health", "severity": "Severity", "severityNA": "Not estimated by this model",
+    "healthy": "Healthy", "diseased": "Diseased", "uncertain": "Uncertain",
+    "overview": "Overview", "symptoms": "Symptoms", "causes": "Possible Causes", "environment": "Favourable Conditions",
+    "treatment": "Recommended Treatment", "prevention": "Prevention Methods", "pathogen": "Caused by",
+    "downloadReport": "Download PDF Report", "downloading": "Preparing report…", "reportLanguage": "Report language",
+    "low_confidence": "Unable to identify the disease confidently. Please upload a clearer image.",
+    "low_confidence_crop": "The leaf looks like {{crop}}, but the disease could not be identified confidently. Please upload a clearer image.",
+    "unsupported": "This plant does not appear to be one of the supported crops (Tomato, Potato, Bell Pepper, Apple, Corn, Grape), or the image is unclear.",
+    "not_plant": "No plant leaf was detected in this image. Please upload a close-up photo of a single leaf.",
+    "topPredictions": "Model's top guesses", "expertWarning": "Consult your local agricultural expert or Krishi Vigyan Kendra before applying any pesticide or chemical.",
+    "scanId": "Scan ID", "date": "Date & Time", "modelVersion": "Model version", "noInfo": "No information available"
+  },
+  "history": {
+    "title": "Scan History", "subtitle": "All your previous plant scans.", "search": "Search crop or disease…",
+    "allStatus": "All results", "from": "From", "to": "To", "clear": "Clear filters", "view": "View",
+    "delete": "Delete", "confirmDelete": "Delete this scan permanently?", "deleted": "Scan deleted",
+    "empty": "No scans match your filters", "image": "Image", "date": "Date", "crop": "Crop", "disease": "Disease",
+    "confidence": "Confidence", "status": "Status", "actions": "Actions", "page": "Page {{page}} of {{pages}}",
+    "prev": "Previous", "next": "Next", "back": "Back to history", "allDiseases": "All diseases"
+  },
+  "diseases": {
+    "title": "Disease Library", "subtitle": "Learn about crop diseases, symptoms and prevention.",
+    "search": "Search disease or crop…", "allCrops": "All crops", "allTypes": "All types", "healthyOnly": "Show healthy plants",
+    "affectedCrop": "Crop", "readMore": "Read more", "close": "Close", "empty": "No diseases found", "count": "{{n}} entries",
+    "types": { "fungal": "Fungal", "bacterial": "Bacterial", "viral": "Viral", "pest": "Pest", "oomycete": "Water mould", "healthy": "Healthy", "other": "Other" }
+  },
+  "profile": {
+    "title": "My Profile", "details": "Personal details", "save": "Save changes", "saved": "Profile updated",
+    "changePassword": "Change password", "currentPassword": "Current password", "newPassword": "New password",
+    "updatePassword": "Update password", "passwordChanged": "Password changed successfully", "memberSince": "Member since {{date}}"
+  },
+  "admin": {
+    "title": "Admin Dashboard", "subtitle": "Application analytics and management",
+    "totalFarmers": "Registered Farmers", "totalScans": "Total Scans", "totalDiseases": "Diseases in Library",
+    "modelStatus": "AI Model", "ready": "Ready", "notReady": "Not installed", "mostDetected": "Most detected diseases",
+    "scans30": "Scans in the last 30 days", "healthSplit": "Result breakdown", "users": "User Management",
+    "searchUsers": "Search name, email or mobile…", "name": "Name", "role": "Role", "scans": "Scans", "joined": "Joined",
+    "active": "Active", "inactive": "Inactive", "deactivate": "Deactivate", "activate": "Activate",
+    "diseaseMgmt": "Disease Database Management", "addDisease": "Add disease", "editDisease": "Edit disease",
+    "save": "Save", "cancel": "Cancel", "listHint": "One item per line", "classLabel": "Model class label (optional)",
+    "nameEn": "Disease name (English)", "nameHi": "Disease name (Hindi)", "cropEn": "Crop (English)", "cropHi": "Crop (Hindi)",
+    "type": "Type", "isHealthy": "Healthy class", "descEn": "Description (English)", "descHi": "Description (Hindi)",
+    "envEn": "Favourable conditions (English)", "envHi": "Favourable conditions (Hindi)",
+    "confirmDeleteDisease": "Delete \"{{name}}\"? Scans keep their stored names.", "created": "Disease created", "updated": "Disease updated",
+    "deleted": "Disease deleted", "english": "English", "hindi": "Hindi", "noData": "No data yet"
+  },
+  "common": {
+    "loading": "Loading…", "retry": "Try again", "error": "Something went wrong", "yes": "Yes", "no": "No",
+    "cancel": "Cancel", "confirm": "Confirm", "edit": "Edit", "delete": "Delete", "search": "Search", "back": "Back",
+    "notFound": "Page not found", "goHome": "Go to home", "en": "English", "hi": "हिन्दी", "none": "—"
+  },
+  "errors": {
+    "network": "Cannot reach the server. Check your internet connection or whether the backend is running.",
+    "invalid_credentials": "Invalid email or password", "email_exists": "An account with this email already exists",
+    "admin_registration_forbidden": "Admin accounts cannot be created through public registration",
+    "account_inactive": "This account has been deactivated", "unauthorized": "Please log in again",
+    "invalid_token": "Your session has expired. Please log in again", "forbidden": "You don't have permission for this",
+    "file_too_large": "File too large. Maximum size is 10 MB", "unsupported_file_type": "Unsupported file type. Use JPG, JPEG, PNG or WEBP",
+    "invalid_image": "The file is not a valid image", "image_too_small": "Image is too small. Use a larger photo",
+    "empty_file": "The file is empty", "model_unavailable": "The AI model is not available on the server yet",
+    "scan_not_found": "Scan not found", "wrong_password": "Current password is incorrect",
+    "same_password": "New password must be different from the current one", "class_label_exists": "This model class label is already used",
+    "internal_error": "Server error. Please try again later"
+  }
+}

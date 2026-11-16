@@ -1,0 +1,21 @@
+# --- API / core ---
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+pydantic-settings>=2.3
+email-validator>=2.1
+SQLAlchemy>=2.0
+alembic>=1.13
+python-multipart>=0.0.9
+python-jose[cryptography]>=3.3
+bcrypt>=4.1
+# --- image processing ---
+Pillow>=10.3
+opencv-python-headless>=4.9
+numpy>=1.26
+# --- reports ---
+reportlab>=4.2
+uharfbuzz>=0.39   # correct Hindi (Devanagari) shaping in PDF reports
+# --- tests ---
+pytest>=8.0
+httpx>=0.27
