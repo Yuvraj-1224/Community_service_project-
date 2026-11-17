@@ -83,7 +83,7 @@ def main():
         short = [l.replace("___", ": ").replace("_", " ")[:32] for l in labels]
         ax.set_xticks(range(len(labels)), short, rotation=90, fontsize=7)
         ax.set_yticks(range(len(labels)), short, fontsize=7)
-        ax.set_xlabel("Predicted"); ax.set_ylabel("True"); ax.set_title("AgroVision AI – Test confusion matrix")
+        ax.set_xlabel("Predicted"); ax.set_ylabel("True"); ax.set_title("Crop Care AI – Test confusion matrix")
         fig.tight_layout()
         fig.savefig(args.artifacts / "confusion_matrix.png", dpi=130)
         print("Saved confusion_matrix.png")

@@ -1,4 +1,4 @@
-"""Shared helpers for the AgroVision AI training pipeline."""
+"""Shared helpers for the Crop Care AI training pipeline."""
 from __future__ import annotations
 
 import json

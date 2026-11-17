@@ -1,4 +1,4 @@
-# AgroVision AI – Model Training Pipeline
+# Crop Care AI – Model Training Pipeline
 
 > **Status:** this repository ships the *training pipeline*, **not** trained weights.
 > Until you train and export a model, the backend answers `503 model_unavailable` for

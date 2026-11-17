@@ -1,4 +1,4 @@
-"""Train the AgroVision AI plant disease classifier (transfer learning on PlantVillage).
+"""Train the Crop Care AI plant disease classifier (transfer learning on PlantVillage).
 
 Example (full training, GPU recommended – e.g. Google Colab):
     python train.py --data-dir dataset/plantvillage --arch mobilenetv2 --epochs 10 --fine-tune-epochs 10

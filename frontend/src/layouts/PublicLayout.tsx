@@ -19,7 +19,7 @@ export default function PublicLayout() {
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 border-b border-forest-900/5 bg-cream/85 backdrop-blur">
         <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-          <Link to="/" aria-label="AgroVision AI home"><Logo /></Link>
+          <Link to="/" aria-label="Crop Care AI home"><Logo /></Link>
           <div className="hidden items-center gap-6 md:flex">
             {links.map((l) => (
               <a key={l.href} href={l.href} className="text-sm font-medium text-gray-700 transition hover:text-forest-800">{l.label}</a>
@@ -74,7 +74,7 @@ export default function PublicLayout() {
           </div>
         </div>
         <p className="border-t border-white/10 py-4 text-center text-xs text-forest-300">
-          © {new Date().getFullYear()} AgroVision AI. {t("landing.footerRights")}
+          © {new Date().getFullYear()} Crop Care AI. {t("landing.footerRights")}
         </p>
       </footer>
     </div>

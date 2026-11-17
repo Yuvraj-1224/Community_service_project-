@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parents[2]  # backend/
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=BASE_DIR / ".env", env_file_encoding="utf-8", extra="ignore")
 
-    APP_NAME: str = "AgroVision AI"
+    APP_NAME: str = "Crop Care AI"
     API_PREFIX: str = "/api"
     ENVIRONMENT: str = "development"
     DEBUG: bool = False

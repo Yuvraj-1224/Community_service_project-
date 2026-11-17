@@ -21,7 +21,7 @@ from app.schemas import _check_password_strength
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Create or promote an AgroVision AI admin")
+    ap = argparse.ArgumentParser(description="Create or promote a Crop Care AI admin")
     ap.add_argument("--email", required=True)
     ap.add_argument("--name", default="Administrator")
     ap.add_argument("--mobile", default=None)

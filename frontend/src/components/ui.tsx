@@ -12,7 +12,7 @@ export function Logo({ light = false, compact = false }: { light?: boolean; comp
       </span>
       {!compact && (
         <span className={cn("text-lg", light ? "text-white" : "text-forest-900")}>
-          AgroVision <span className={light ? "text-forest-200" : "text-forest-600"}>AI</span>
+          Crop Care <span className={light ? "text-forest-200" : "text-forest-600"}>AI</span>
         </span>
       )}
     </span>

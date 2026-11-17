@@ -1,4 +1,4 @@
-"""AgroVision AI – FastAPI application entry point.
+"""Crop Care AI – FastAPI application entry point.
 
 Run (from backend/):  uvicorn app.main:app --reload
 Swagger docs:         http://localhost:8000/docs
@@ -32,7 +32,7 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(
-    title="AgroVision AI API",
+    title="Crop Care AI API",
     description="Smart Plant Disease Detection & Farmer Assistance System",
     version="1.0.0",
     lifespan=lifespan,

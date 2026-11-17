@@ -1,8 +1,8 @@
-# 🌿 AgroVision AI – Smart Plant Disease Detection & Farmer Assistance System
+# 🌿 Crop Care AI – Smart Plant Disease Detection & Farmer Assistance System
 
 > B.Tech Final Year Project · AI/ML + Full-Stack Web Application
 
-AgroVision AI lets a farmer photograph or upload a plant leaf and get an AI-based disease diagnosis. The result includes a
+Crop Care AI lets a farmer photograph or upload a plant leaf and get an AI-based disease diagnosis. The result includes a
 confidence score and clear guidance on symptoms, causes, prevention and treatment, in **Hindi and English**. Every scan is
 saved, and a PDF report can be downloaded.
 

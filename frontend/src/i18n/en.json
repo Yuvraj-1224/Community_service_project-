@@ -1,5 +1,5 @@
 {
-  "app": { "name": "AgroVision AI", "tagline": "Smart Plant Disease Detection" },
+  "app": { "name": "Crop Care AI", "tagline": "Smart Plant Disease Detection" },
   "nav": {
     "home": "Home", "features": "Features", "howItWorks": "How It Works", "about": "About", "login": "Login",
     "register": "Register", "dashboard": "Dashboard", "detect": "Detect Disease", "history": "Scan History",
@@ -25,14 +25,14 @@
     "s4t": "Act & track", "s4d": "Follow prevention tips, consult an expert, download the report.",
     "cropsTitle": "Supported crops", "cropsSubtitle": "Trained on the PlantVillage dataset for these six crops.",
     "aboutTitle": "About the project",
-    "aboutText": "AgroVision AI is a B.Tech final-year project that uses deep learning (MobileNetV2 transfer learning) to help farmers identify plant diseases early. It gives guidance only – always consult your local agriculture expert or Krishi Vigyan Kendra before using any chemical.",
+    "aboutText": "Crop Care AI is a B.Tech final-year project that uses deep learning (MobileNetV2 transfer learning) to help farmers identify plant diseases early. It gives guidance only – always consult your local agriculture expert or Krishi Vigyan Kendra before using any chemical.",
     "cta": "Start your first scan", "footerRights": "All rights reserved.", "contact": "Contact", "project": "Project",
     "footerProject": "B.Tech Final Year Project · AI/ML + Full-Stack", "techStack": "React · FastAPI · TensorFlow"
   },
   "crops": { "Tomato": "Tomato", "Potato": "Potato", "Bell Pepper": "Bell Pepper", "Apple": "Apple", "Corn": "Corn", "Grape": "Grape" },
   "auth": {
     "loginTitle": "Welcome back", "loginSubtitle": "Log in to scan your crops",
-    "registerTitle": "Create your account", "registerSubtitle": "Join AgroVision AI – it's free",
+    "registerTitle": "Create your account", "registerSubtitle": "Join Crop Care AI – it's free",
     "fullName": "Full Name", "email": "Email", "mobile": "Mobile Number", "password": "Password",
     "confirmPassword": "Confirm Password", "role": "User Role", "farmer": "Farmer", "admin": "Admin",
     "adminNote": "Admin accounts are created by the system administrator only.",
@@ -40,7 +40,7 @@
     "noAccount": "Don't have an account?", "haveAccount": "Already have an account?", "forgot": "Forgot password?",
     "forgotTitle": "Reset your password", "forgotSubtitle": "Enter your registered email address.",
     "forgotBtn": "Send reset request",
-    "forgotDone": "Online password reset is not enabled in this version. Please contact the AgroVision AI administrator with your registered email ({{email}}) to reset your password.",
+    "forgotDone": "Online password reset is not enabled in this version. Please contact the Crop Care AI administrator with your registered email ({{email}}) to reset your password.",
     "backToLogin": "Back to login", "showPassword": "Show password", "hidePassword": "Hide password",
     "passwordHint": "At least 8 characters with a letter and a number"
   },

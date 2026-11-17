@@ -81,8 +81,8 @@ def build_report(scan: Scan, disease: Disease | None, lang: str = "en") -> bytes
 
     buf = io.BytesIO()
     doc = SimpleDocTemplate(buf, pagesize=A4, leftMargin=16 * mm, rightMargin=16 * mm, topMargin=14 * mm,
-                            bottomMargin=14 * mm, title=f"AgroVision AI - Scan {scan.id}", author="AgroVision AI")
-    story = [Paragraph("AgroVision AI", brand), Spacer(1, 2), Paragraph(escape(L["title"]), ParagraphStyle("t", parent=h1, alignment=TA_CENTER, fontSize=14)), Spacer(1, 8)]
+                            bottomMargin=14 * mm, title=f"Crop Care AI - Scan {scan.id}", author="Crop Care AI")
+    story = [Paragraph("Crop Care AI", brand), Spacer(1, 2), Paragraph(escape(L["title"]), ParagraphStyle("t", parent=h1, alignment=TA_CENTER, fontSize=14)), Spacer(1, 8)]
 
     created = scan.created_at if scan.created_at.tzinfo else scan.created_at.replace(tzinfo=timezone.utc)
     local = created.astimezone(ZoneInfo("Asia/Kolkata")).strftime("%d %b %Y, %I:%M %p IST")
